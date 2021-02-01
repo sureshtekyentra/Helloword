@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: myecrrepo.azurecr.io/helloworld:latest
+        image: myecrrepo.azurecr.io/sureshtekyentrahelloword:latest
         ports:
         - containerPort: 80
 ---
