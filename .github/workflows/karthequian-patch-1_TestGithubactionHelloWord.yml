@@ -19,7 +19,7 @@ jobs:
 
 
     - name: Publish to folder
-      run: p:_PackageTempDir="\published\"
+      run: D:\a\Helloword\Helloword ="\published\"
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
