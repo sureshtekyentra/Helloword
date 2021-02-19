@@ -7,21 +7,38 @@ on:
   push:
     branches:
       - karthequian-patch-1
-  workflow_dispatch:
+name:Azure Static Web Apps CI/CD
 
+on:
+  push:
+    branches:
+    - karthequian-patch-1
+
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+    - karthequian-patch-1
+
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+    - main
 jobs:
   build-and-deploy:
     runs-on: 'windows-latest'
-
     steps:
-    - uses: actions/checkout@master
-
-    - name: Setup MSBuild path
-      uses: microsoft/setup-msbuild@v1.0.2
-
-
-    - name: Publish to folder
-      run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+    - name: Build And Deploy
+      id: builddeploy
+      uses: Azure/static-web-apps-deploy@v0.0.1-preview
+      
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
@@ -29,4 +46,6 @@ jobs:
         app-name: 'TestGithubactionHelloWord'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6080203cf16e4a50970b3aba2aecee98 }}
-        package: \published\
+        action: 'upload'
+        app_location: '/'
+        
