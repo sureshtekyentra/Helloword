@@ -15,14 +15,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    
+    - name: Upload a Build Artifact
+    -  uses: actions/upload-artifact@v2.2.2
+       with:
+    # Artifact name
+          name: drop
+    # A file, directory or wildcard pattern that describes what to upload
+          path: "/"
+               
 
-    - name: Zip the application files
-      run: Compress-Archive .\* app.zip
 
-    - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'TestGithubactionHelloWord'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_25cfb054ef8b4b88bb923b1c4a80d5d9 }}
-        package: '.\app.zip'
+ 
+
