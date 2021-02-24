@@ -16,8 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-
-
+    - name: Archive using zip or tar
+  
+    - uses: NSCoder/archive-action@v1.0.0
+      
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
