@@ -15,11 +15,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-
-
-
-    - name: Zip the application files
-      run: Compress-Archive .\* app.zip
+    - name: release-downloader
+  # You may pin to the exact commit or the version.
+  # uses: robinraju/release-downloader@f41ad93917b84eb8b8900599138dba28ed91ce80
+      uses: robinraju/release-downloader@v1
+      with:
+       repository:  default is 
+       fileName: Helloword
+    
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
@@ -27,4 +30,4 @@ jobs:
         app-name: 'hellowordGithub'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_5f1b184d196043fa97e11e6638ebe1ba }}
-        package: '.\app.zip'
+        package: 'Helloword'
