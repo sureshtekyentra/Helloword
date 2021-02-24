@@ -21,8 +21,8 @@ jobs:
       uses: robinraju/release-downloader@v1
       with:
        repository: sureshtekyentra/Helloword  
-       fileName: Helloword
-    
+       
+       tag: test
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
