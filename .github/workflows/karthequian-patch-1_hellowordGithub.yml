@@ -20,7 +20,7 @@ jobs:
   # uses: robinraju/release-downloader@f41ad93917b84eb8b8900599138dba28ed91ce80
       uses: robinraju/release-downloader@v1
       with:
-       repository: "Helloword"  
+       repository: sureshtekyentra/Helloword  
        fileName: Helloword
     
 
