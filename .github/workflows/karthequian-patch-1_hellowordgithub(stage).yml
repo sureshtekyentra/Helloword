@@ -18,19 +18,7 @@ jobs:
 
 
   
-    -  uses: veracode/veracode-uploadandscan-action@0.2.1
-       with:
-    # appname
-        appname: ${{ github.repository }}
-    # createprofile
-        createprofile: true
-    # filepath
-        filepath: .
-
-    # vid
-        vid: 12dd2522f09d13e76d5b03ff29fcae67
-    # vkey
-        vkey: adc2fb7d0cc6cfa27b12fb9d09472d1d281f11ab1271833899684df90c92efb7baaa93dc8aa3fc5ba1e761875964b73d739df3b5a57df27a3c36be2e861c6418
+    
  
 
     - name: 'Deploy to Azure Web App'
