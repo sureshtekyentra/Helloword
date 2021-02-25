@@ -19,7 +19,7 @@ jobs:
  
   
     
-      
+    
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
@@ -27,4 +27,4 @@ jobs:
         app-name: 'hellowordGithub'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_f55848e7448c43fa90259a23d0c3cce6 }}
-        package: '${{ github.workspace }}'
+        package: .
