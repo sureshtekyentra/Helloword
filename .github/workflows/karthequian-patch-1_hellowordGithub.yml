@@ -25,6 +25,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'hellowordGithub'
-        slot-name: 'production'
+        slot-name: 'stage'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_f55848e7448c43fa90259a23d0c3cce6 }}
         package: .
