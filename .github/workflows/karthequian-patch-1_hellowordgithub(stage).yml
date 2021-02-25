@@ -16,19 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: Set up Python version
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.6'
-
-    - name: Install Python dependencies
-      run: |
-        python -m venv env
-        .\env\Scripts\activate
-        pip install -r requirements.txt
 
     - name: Zip the application files
-      run: Compress-Archive .\* app.zip
+      run: Compress-Archive .
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
@@ -36,4 +26,4 @@ jobs:
         app-name: 'hellowordgithub'
         slot-name: 'stage'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_dcf6c4df55eb4020be68d864abb39e97 }}
-        package: '.\app.zip'
+        package: .
