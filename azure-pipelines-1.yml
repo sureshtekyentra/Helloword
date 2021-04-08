@@ -11,7 +11,7 @@ resources:
     
 
     name: sureshtekyentra/Helloword
-    ref: karthequian-patch-1
+    ref: features/tools
 
 
 
@@ -27,7 +27,7 @@ pr: none
 
 steps:
  
- - checkout: self
+ - checkout: Helloword
 
 
 
