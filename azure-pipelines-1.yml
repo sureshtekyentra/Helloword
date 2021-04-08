@@ -12,12 +12,10 @@ resources:
 
     name: sureshtekyentra/Helloword
     ref: features/tools
+    trigger:
+      - karthequian-patch-1
 
 
-
-
-trigger:
-  - karthequian-patch-1
 
 pool:
      vmImage: ubuntu-latest
@@ -27,11 +25,6 @@ pr: none
 
 steps:
  
- - checkout: git://sureshtekyentra/Helloword@features/tools
-
-
-
-
  - task: ArchiveFiles@2
    name: Create_Zip
    inputs:
