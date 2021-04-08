@@ -11,7 +11,7 @@ resources:
     
 
     name: sureshtekyentra/Helloword
-    
+    ref: karthequian-patch-1
     trigger:
       - karthequian-patch-1
 
@@ -24,7 +24,7 @@ pr: none
 
 
 steps:
- - checkout: self
+
  
  - task: ArchiveFiles@2
    name: Create_Zip
