@@ -25,12 +25,12 @@ pr: none
 
 
 steps:
- - checkout: self
+ 
  - checkout: Helloword
 
 
 
- - script: dir $(Build.SourcesDirectory)
+
 
  - task: ArchiveFiles@2
    name: Create_Zip
