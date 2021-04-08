@@ -18,7 +18,8 @@ resources:
 
 
 pool:
-     vmImage: ubuntu-latest
+     name: AzureProdAse
+     Agent.Name: prod-ase01-jump
 # no PR triggers
 pr: none
 
