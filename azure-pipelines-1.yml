@@ -7,6 +7,8 @@ resources:
   repositories:
   - repository: Helloword
     type: github
+    endpoint: sureshtekyentra
+    
 
     name: sureshtekyentra/Helloword
 
