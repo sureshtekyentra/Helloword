@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+   include:
+    - karthequian-patch-1
+    - releases/*
+    - feature/*
+   exclude:
+    - releases/old*
+    - feature/*-working
+
+pool:
+  vmImage: ubuntu-latest
+
+# no PR triggers
+pr: none
+
+steps:
+- task: DeleteFiles@1
+  name: Delete_Git_Folder
+  inputs:
+    SourceFolder: '.git'
+    Contents: '*'
+    RemoveSourceFolder: true
+
+- task: ArchiveFiles@2
+  name: Create_Zip
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
