@@ -25,7 +25,8 @@ pr: none
 
 steps:
 
- 
+ - checkout: self
+   fetchDepth: 1
  - task: ArchiveFiles@2
    name: Create_Zip
    inputs:
