@@ -3,18 +3,34 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+  - repository: Helloword
+    type: github
+
+    name: sureshtekyentra/Helloword
+
+
+
+
 trigger:
-   - karthequian-patch-1
+  - karthequian-patch-1
 
 pool:
-  vmImage: ubuntu-latest
-
+     vmImage: ubuntu-latest
 # no PR triggers
 pr: none
 
+
 steps:
  - checkout: karthequian-patch-1
+ - checkout: self
 
-
+ - task: ArchiveFiles@2
+   name: Create_Zip
+   inputs:
+     rootFolderOrFile: '$(build.sourcesDirectory)'
+     includeRootFolder: false
+ - task: PublishBuildArtifacts@1
 
 
