@@ -25,8 +25,12 @@ pr: none
 
 
 steps:
- - checkout: karthequian-patch-1
- 
+ - checkout: self
+ - checkout: Helloword
+
+
+
+ - script: dir $(Build.SourcesDirectory)
 
  - task: ArchiveFiles@2
    name: Create_Zip
