@@ -27,8 +27,7 @@ pr: none
 
 steps:
  
- - checkout: karthequian-patch-1
- - checkout: self
+ - checkout: sureshtekyentra/Helloword/tree/karthequian-patch-1
 
 
 
