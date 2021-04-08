@@ -11,7 +11,7 @@ resources:
     
 
     name: sureshtekyentra/Helloword
-    ref: features/tools
+    
     trigger:
       - karthequian-patch-1
 
