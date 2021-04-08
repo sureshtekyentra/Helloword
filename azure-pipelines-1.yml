@@ -11,6 +11,7 @@ resources:
     
 
     name: sureshtekyentra/Helloword
+    ref: features/tools
 
 
 
@@ -26,7 +27,7 @@ pr: none
 
 steps:
  
- - checkout: Helloword/karthequian-patch-1
+ - checkout: git://MyProject/MyRepo@features/tools
 
 
 
