@@ -27,7 +27,7 @@ pr: none
 
 steps:
  
- - checkout: git://MyProject/MyRepo@features/tools
+ - checkout: git://sureshtekyentra/Helloword/tree/karthequian-patch-1@features/tools
 
 
 
