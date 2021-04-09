@@ -3,15 +3,15 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-resources:
-  repositories:
-  - repository: Helloword
-    type: github
-    endpoint: sureshtekyentra
+#resources:
+ # repositories:
+  #- repository: Helloword
+   # type: github
+    #endpoint: sureshtekyentra
     
 
-    name: sureshtekyentra/Helloword
-    ref: karthequian-patch-1
+   # name: sureshtekyentra/Helloword
+    #ref: karthequian-patch-1
 trigger:
       - karthequian-patch-1
 
@@ -28,7 +28,7 @@ steps:
 
  - checkout: self
    fetchDepth: 1
-   clean: false
+   
  - task: ArchiveFiles@2
    name: Create_Zip
    inputs:
